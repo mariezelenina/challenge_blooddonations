@@ -1,0 +1,7 @@
+Baseline score (most common output) - 0.75 Accuracy
+
+first submission - LogReg.csv
+Naive (no changes) LogReg model from sklearn. All features. No pre-processing.
+Score - Acc 0.758620689655. Log_loss 7.7351
+
+Next step - experiment with existing sckit classifiers
