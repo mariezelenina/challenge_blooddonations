@@ -18,7 +18,7 @@ def data_reader(path, ycolumn = True, split = True, trainsize = 0.8):
         x_all = np.delete(numpy_array,dimension,1)
 
         if split:
-            x_train, x_test, y_train, y_test = train_test_split(x_all, y_all, test_size = 1-trainsize, random_state = 42)
+            x_train, x_test, y_train, y_test = train_test_split(x_all, y_all, test_size = 1-trainsize, random_state = 0)
             #todo - randomness of split
             return x_train, x_test, y_train, y_test
         else:

@@ -15,16 +15,25 @@ trained_model = model.fit(x_train,y_train)
 y_test_predicted = trained_model.predict(x_test)
 print y_test_predicted
 
-# Accuracy score
-print trained_model.score(x_test,y_test)
-# todo Log loss score
+y_test_predicted_probs = trained_model.predict_proba(x_test)[:,1]
+print y_test_predicted_probs
+
+# Scores
+print 'Score: accuracy ', trained_model.score(x_test,y_test)
+print 'Score: log loss ', metrics.log_loss(y_test,y_test_predicted)
+print 'Score: log loss for proba ', metrics.log_loss(y_test,y_test_predicted_probs)
 
 
-'''
+#-------------------------------------------
 # make submission file
 x_submit = data_reader('data/5c9fa979-5a84-45d6-93b9-543d1a0efc41.csv', ycolumn=False)
-y_submit_predicted = trained_model.predict(x_submit)
 
-data_writer(x_submit,y_submit_predicted,'data/submissions/LogReg.csv')'''
+# -> binary class prediction
+y_submit_predicted = trained_model.predict(x_submit)
+data_writer(x_submit,y_submit_predicted,'data/submissions/LogReg.csv')
+
+# -> probs predictions
+y_submit_predicted_probs = trained_model.predict_proba(x_submit)[:,1]
+data_writer(x_submit,y_submit_predicted_probs,'data/submissions/LogReg_probs.csv')
 
 

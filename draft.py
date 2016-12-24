@@ -15,5 +15,6 @@ y_test_predicted = [0] * len(y_test)
 
 print accuracy_score(y_test, y_test_predicted)
 
+print metrics.log_loss(y_test,y_test_predicted)
 
 
