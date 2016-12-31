@@ -15,7 +15,6 @@ def data_reader(path, ycolumn = True, split = True, trainsize = 0.8):
     datafile = open(path, 'r')
     df = pd.read_csv(datafile, header=0, delimiter=",")
     numpy_array = df.as_matrix()
-    print numpy_array[0]
 
     # if we are loading submission test data, we don't have any y
     if not ycolumn:

@@ -12,6 +12,46 @@ BASELINE:
 Acc: 0.698275862069
 Log Loss: 10.4211825329
 
+FEATS FROM CSV
 Score: accuracy  0.75
 Score: log loss  8.63469409873
 Score: log loss for proba 0.512524383117
+
+FEATS FROM CSV + 'DonationFrequency'
+Score: accuracy  0.741379310345
+Score: log loss  8.93244906418
+Score: log loss for proba 0.515647614309
+
+FEATS FROM CSV + 'DonationFrequency' + 'DonatedOnce'
+Score: accuracy  0.73275862069
+Score: log loss  9.23019024347
+Score: log loss for proba 0.534644813541
+
+FEATS FROM CSV + 'DonatedOnce'
+Score: accuracy  0.724137931034
+Score: log loss  9.52794520892
+Score: log loss for proba 0.537603935814
+
+FEATS FROM CSV + 'DonatedOnceOrTwice'
+Score: accuracy  0.724137931034
+Score: log loss  9.52794520892
+Score: log loss for proba 0.528389172063
+
+FEATS FROM CSV + 'SinceLastDonation-OneMonth'
+Score: accuracy  0.75
+Score: log loss  8.63470099181
+Score: log loss for proba 0.511226147929
+
+FEATS FROM CSV + 'SinceLastDonation-OneTwoMonth'
+Score: accuracy  0.75
+Score: log loss  8.63469409873
+Score: log loss for proba 0.512524383125
+
+MyData.add_feature('DonationFrequency')
+MyData.add_feature('DonatedOnce')
+MyData.add_feature('DonatedOnceOrTwice')
+MyData.add_feature('SinceLastDonation-OneMonth')
+MyData.add_feature('SinceLastDonation-OneTwoMonth')
+Score: accuracy  0.741379310345
+Score: log loss  8.93244906418
+Score: log loss for proba 0.529678020143
