@@ -55,3 +55,6 @@ MyData.add_feature('SinceLastDonation-OneTwoMonth')
 Score: accuracy  0.741379310345
 Score: log loss  8.93244906418
 Score: log loss for proba 0.529678020143
+Score: accuracy  0.741379310345
+Score: log loss  8.93244906418
+Score: log loss for proba 0.529677858274
