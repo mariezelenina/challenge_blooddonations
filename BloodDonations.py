@@ -2,7 +2,8 @@ import numpy as np
 
 class BloodDonations(object):
 
-    def __init__(self, x_featdict, y_train):
+    def __init__(self, x_ids, x_featdict, y_train):
+        self.x_ids = x_ids
         self.x_featdict = x_featdict
         self.y = y_train
         self.x = self.create_inputready_x()
@@ -61,6 +62,9 @@ class BloodDonations(object):
                     feature.append(0)
             self.x_featdict['feat_SinceLastDonation-OneTwoMonth'] = np.array(feature)
             return self.x_featdict
+        else:
+            print 'Don\'t know this feature name '
+            #todo throw proper error
 
     def remove_feature(self, feature_name):
         if feature_name in self.x_featdict.keys():
